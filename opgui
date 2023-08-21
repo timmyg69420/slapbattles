@@ -1,0 +1,134 @@
+-- Instances:
+
+local Exploit = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+local TextButtonn = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
+
+--Properties:
+null = false
+killaura = false
+
+Exploit.Name = "Exploit"
+Exploit.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Exploit.ResetOnSpawn = false
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = Exploit
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BackgroundTransparency = 0.500
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.00999999978, 0, 0.579999983, 0)
+MainFrame.Size = UDim2.new(0.600000024, 0, 0.400000006, 0)
+
+UIAspectRatioConstraint.Parent = MainFrame
+UIAspectRatioConstraint.AspectRatio = 0.800
+
+UICorner.CornerRadius = UDim.new(0.100000001, 0)
+UICorner.Parent = MainFrame
+
+TextLabel.Parent = MainFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0500000007, 0, 0.0299999993, 0)
+TextLabel.Size = UDim2.new(0.899999976, 0, 0.100000001, 0)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "sb hacking gui!!!! (real)"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextButton.Parent = MainFrame
+TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.0500000007, 0, 0.150000006, 0)
+TextButton.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+TextButton.Font = Enum.Font.Gotham
+TextButton.Text = "commit server death (warning: this can crash your computer)"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+TextButtonn.Parent = MainFrame
+TextButtonn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButtonn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButtonn.BorderSizePixel = 0
+TextButtonn.Position = UDim2.new(0.0500000007, 0, 0.150000006, 50)
+TextButtonn.Size = UDim2.new(0.899999976, 0, 0.150000006, 0)
+TextButtonn.Font = Enum.Font.Gotham
+TextButtonn.Text = "basically kill aura"
+TextButtonn.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButtonn.TextScaled = true
+TextButtonn.TextSize = 14.000
+TextButtonn.TextWrapped = true
+TextButtonn.Name = "Ba"
+
+UICorner_2.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_2.Parent = TextButton
+
+TextButton_2.Parent = MainFrame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.BackgroundTransparency = 1.000
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0.0500000007, 0, 0.925000012, 0)
+TextButton_2.Size = UDim2.new(0.5, 0, 0.0500000007, 0)
+TextButton_2.Font = Enum.Font.Gotham
+TextButton_2.Text = "v1.01"
+TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+TextButton_2.TextXAlignment = Enum.TextXAlignment.Left
+
+-- Scripts:
+
+local function FIWBL_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	local function NullSpam()
+		while null == true do
+		    wait()
+			game.ReplicatedStorage.NullAbility:FireServer()
+		end
+	end
+	script.Parent.MouseButton1Click:Connect(function()
+	    if null == false then
+	    null = true
+		NullSpam()
+		elseif null == true then
+		null = false
+		end
+	end) 
+	end
+local function FL_fake_script() -- TextButton.LocalScript 
+	local script2 = Instance.new('LocalScript', TextButtonn)
+
+    local function ExplosionSpam()
+		while killaura == true do
+		    wait()
+            game:GetService("ReplicatedStorage"):WaitForChild("rhythmevent"):FireServer("AoeExplosion", 86)
+		end
+	end
+	
+	script2.Parent.MouseButton1Click:Connect(function()
+	    if killaura == false then
+	    killaura = true
+		ExplosionSpam()
+		elseif killaura == true then
+		killaura = false
+		end
+	end) 
+end
+coroutine.wrap(FIWBL_fake_script)()
+coroutine.wrap(FL_fake_script)()
